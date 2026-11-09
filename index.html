@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">	
+		<title>Der digitale Münzwurf</title>
+		<style>
+			#coin {
+				background-color: white; 		/*Hintergrundfarbe: Reinweiß.*/
+				border: 2px solid black; 		/*Ecken: Stark abgerundet (Abrundungsradius von mindestens 16 Pixeln).*/
+				border-radius: 16px; 			/*Ecken: Stark abgerundet (Abrundungsradius von mindestens 16 Pixeln).*/
+				box-shadow: 2px 5px;			/*Schatten: Ein leichter, weicher Schattenwurf zur optischen Abhebung vom Hintergrund.*/
+				padding: 32px;					/*Formatiere ein Element so, dass es einen großzügigen Innenabstand von mindestens 32 Pixeln an allen Seiten erhält*/
+				width: 300px;					/*und eine Inhaltsbreite von 300 Pixeln aufweist*/
+				box-sizing: border-box;
+			}
+			body {
+				font-family: sans-serif; 
+			}
+			h1 {
+				color: darkgrey; 				/* Dunkelgrau, */
+				text-align: center;				/* mittig ausgerichtet,*/
+				font-weight: bolder; 			/* gut lesbar.*/
+			}
+			#output {
+				background-color: lightgray; 	/*Hintergrundfarbe: Sehr helles Grau.*/
+				border: 1px solid black; 		/*Dünne, dezente Umrandung.*/
+				border-radius: 16px;			/*Optional*/
+				padding: 32px;					/*Ausreichend Platz für die Anzeige.*/
+				text-align: center;				/*Textausrichtung: Mittig*/
+			}
+			button {
+				background-color: blue; 		/*Kräftige Akzentfarbe (z. B. Blau oder Violett*/
+				color: white; 					/*weiße Textfarbe*/
+				border-radius: 16px;			/*abgerundete Ecken*/
+			}
+			button:hover {
+			  background-color: lightblue;		/*eim Überfahren mit der Maus (Hover) eine sichtbare Farbänderung.*/
+			}
+		
+		</style>
+	</head>
+	
+	
+	<body>
+	<div id="coin">
+	
+	
+	<h1>Kopf oder Zahl? Lass das Glück entscheiden.</h1>
+	
+	<div id="output">
+		<p id="result">Drücke den Button, um die Münze zu werfen...</p>
+		<button type="button" onclick="headOrTail()"> Münze werfen </button>
+		
+	
+		<script>
+			function headOrTail(){
+				const isEven = Math.floor(Math.random() * 99999999) % 2 == 0;
+				if (isEven) {
+					document.getElementById("result").innerHTML = '<img src="./img/head.png" alt="Head" width="100" height="100">'
+				} else {
+					document.getElementById("result").innerHTML = '<img src="./img/tail.png" alt="Tail" width="100" height="100">'
+				}
+			}
+		</script>
+	
+	</div>
+	</body>
+</html>
