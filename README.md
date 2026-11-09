@@ -1,2 +1,1 @@
-# coin
-simple task for frontend - no ai 
+Single-page digital coin toss web application.
